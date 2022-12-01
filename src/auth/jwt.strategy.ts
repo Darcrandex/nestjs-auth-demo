@@ -19,6 +19,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, JWT_STRATEGY_NAME) {
   async validate(signPayload: unknown) {
     console.log('2. JwtStrategy 从请求头中获取 token 并解析；成功后把解析内容返回')
 
+    // 尝试从 header 中解析 token
+    // 如果成功，继续
+    // 如果失败，报错 401
+
     return signPayload
   }
 }
